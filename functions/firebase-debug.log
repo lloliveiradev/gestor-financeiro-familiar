@@ -1,0 +1,247 @@
+[debug] [2022-12-13T00:02:45.690Z] ----------------------------------------------------------------------
+[debug] [2022-12-13T00:02:45.693Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\lloli\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2022-12-13T00:02:45.693Z] CLI Version:   11.16.1
+[debug] [2022-12-13T00:02:45.694Z] Platform:      win32
+[debug] [2022-12-13T00:02:45.694Z] Node Version:  v18.12.1
+[debug] [2022-12-13T00:02:45.695Z] Time:          Mon Dec 12 2022 21:02:45 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2022-12-13T00:02:45.696Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-13T00:02:45.930Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-13T00:02:45.931Z] > authorizing via signed-in user (leonardolopesdeoliveira07@gmail.com)
+[debug] [2022-12-13T00:02:45.931Z] [iam] checking project gestor-financeiro-familiar for permissions ["firebase.projects.get"]
+[debug] [2022-12-13T00:02:45.933Z] > refreshing access token with scopes: []
+[debug] [2022-12-13T00:02:45.936Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-13T00:02:45.937Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-13T00:02:46.167Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-12-13T00:02:46.167Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-13T00:02:46.186Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gestor-financeiro-familiar:testIamPermissions [none]
+[debug] [2022-12-13T00:02:46.187Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gestor-financeiro-familiar:testIamPermissions x-goog-quota-user=projects/gestor-financeiro-familiar
+[debug] [2022-12-13T00:02:46.187Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gestor-financeiro-familiar:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-12-13T00:02:47.071Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gestor-financeiro-familiar:testIamPermissions 200
+[debug] [2022-12-13T00:02:47.072Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gestor-financeiro-familiar:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-12-13T00:02:47.074Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gestor-financeiro-familiar [none]
+[debug] [2022-12-13T00:02:47.544Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gestor-financeiro-familiar 200
+[debug] [2022-12-13T00:02:47.545Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gestor-financeiro-familiar {"projectId":"gestor-financeiro-familiar","projectNumber":"555591106388","displayName":"gestor-financeiro-familiar","name":"projects/gestor-financeiro-familiar","resources":{"hostingSite":"gestor-financeiro-familiar"},"state":"ACTIVE","etag":"1_e3fbb56c-e9a9-48e3-ae77-8be1b5a60ac9"}
+[warn] !  Your requested "node" version "16" doesn't match your global version "18". Using node@18 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \"16\" doesn't match your global version \"18\". Using node@18 from host."}}
+[debug] [2022-12-13T00:02:47.596Z] defaultcredentials: writing to file C:\Users\lloli\AppData\Roaming\firebase\leonardolopesdeoliveira07_gmail_com_application_default_credentials.json
+[debug] [2022-12-13T00:02:47.600Z] Setting GAC to C:\Users\lloli\AppData\Roaming\firebase\leonardolopesdeoliveira07_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\lloli\\AppData\\Roaming\\firebase\\leonardolopesdeoliveira07_gmail_com_application_default_credentials.json"}}
+[debug] [2022-12-13T00:02:47.602Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gestor-financeiro-familiar/adminSdkConfig [none]
+[debug] [2022-12-13T00:02:48.047Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gestor-financeiro-familiar/adminSdkConfig 200
+[debug] [2022-12-13T00:02:48.048Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gestor-financeiro-familiar/adminSdkConfig {"projectId":"gestor-financeiro-familiar","storageBucket":"gestor-financeiro-familiar.appspot.com"}
+[info] i  functions: Watching "C:\Projetos\gestor-financeiro\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Projetos\\gestor-financeiro\\functions\" for Cloud Functions..."}}
+[debug] [2022-12-13T00:02:48.107Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2022-12-13T00:02:55.835Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "functions": "firebase serve --only functions",
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-12-13T00:02:55.835Z] Building nodejs source
+[debug] [2022-12-13T00:02:55.836Z] Analyzing nodejs backend spec
+[debug] [2022-12-13T00:02:55.840Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-12-13T00:02:55.888Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-13T00:02:55.889Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-13T00:02:55.897Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-12-13T00:02:56.383Z] Serving at port 9005
+
+[debug] [2022-12-13T00:02:56.544Z] Got response from /__/functions.yaml {"endpoints":{"usuarios":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"usuarios"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-12-13T00:02:56.560Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: usuarios. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: usuarios."}}
+[info] +  functions[us-central1-usuarios]: http function initialized (http://localhost:5000/gestor-financeiro-familiar/us-central1/usuarios). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5000/gestor-financeiro-familiar/us-central1/usuarios)."}}
+[debug] [2022-12-13T00:03:18.756Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-12-13T00:03:18.757Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-12-13T00:03:18.758Z] Accepted request POST /gestor-financeiro-familiar/us-central1/usuarios --> us-central1-usuarios
+[debug] [2022-12-13T00:03:18.778Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-13T00:03:18.781Z] [functions] Got req.url=/gestor-financeiro-familiar/us-central1/usuarios, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/gestor-financeiro-familiar/us-central1/usuarios, mapping to path=/"}}
+[debug] [2022-12-13T00:03:18.805Z] [worker-pool] addWorker(us-central1-usuarios) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-usuarios)"}}
+[debug] [2022-12-13T00:03:18.807Z] [worker-pool] Adding worker with key us-central1-usuarios, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-usuarios, total=1"}}
+[info] >  Debugger attached. {"user":"Debugger attached.\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"\u001b[90m> \u001b[39m Debugger attached.\r"}}
+[debug] [2022-12-13T00:03:22.542Z] [runtime-status] [1976] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [1976] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-13T00:03:22.546Z] [runtime-status] [1976] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.24.1","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [1976] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-13T00:03:22.547Z] [runtime-status] [1976] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [1976] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-12-13T00:03:22.549Z] [runtime-status] [1976] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.24.1","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [1976] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-13T00:03:22.663Z] [runtime-status] [1976] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [1976] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-12-13T00:03:22.664Z] [runtime-status] [1976] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.24.1","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-functions\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [1976] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}}"}}
+[debug] [2022-12-13T00:03:22.667Z] [runtime-status] [1976] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.24.1","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [1976] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-13T00:03:22.669Z] [runtime-status] [1976] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [1976] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-13T00:03:22.671Z] [runtime-status] [1976] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.24.1","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [1976] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-13T00:03:22.671Z] [runtime-status] [1976] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [1976] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2022-12-13T00:03:22.781Z] [runtime-status] [1976] Functions runtime initialized. {"cwd":"C:\\Projetos\\gestor-financeiro\\functions","node_version":"18.12.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [1976] Functions runtime initialized. {\"cwd\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\",\"node_version\":\"18.12.1\"}"}}
+[debug] [2022-12-13T00:03:22.784Z] [runtime-status] [1976] Listening to port: \\?\pipe\fire_emu_0353102848e88a23 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [1976] Listening to port: \\\\?\\pipe\\fire_emu_0353102848e88a23"}}
+[debug] [2022-12-13T00:03:22.872Z] [worker-us-central1-usuarios-dbf0363f-d59b-4831-a8c0-d68936d09224]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-usuarios-dbf0363f-d59b-4831-a8c0-d68936d09224]: IDLE"}}
+[debug] [2022-12-13T00:03:22.874Z] [worker-pool] submitRequest(triggerId=us-central1-usuarios) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-usuarios)"}}
+[debug] [2022-12-13T00:03:22.875Z] [worker-us-central1-usuarios-dbf0363f-d59b-4831-a8c0-d68936d09224]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-usuarios-dbf0363f-d59b-4831-a8c0-d68936d09224]: BUSY"}}
+[info] i  functions: Beginning execution of "usuarios" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"Beginning execution of \"usuarios\""}}
+[debug] [2022-12-13T00:03:59.909Z] File C:\Projetos\gestor-financeiro\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Projetos\\gestor-financeiro\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-12-13T00:04:00.931Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2022-12-13T00:04:08.477Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "functions": "firebase serve --only functions",
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-12-13T00:04:08.479Z] Building nodejs source
+[debug] [2022-12-13T00:04:08.480Z] Analyzing nodejs backend spec
+[debug] [2022-12-13T00:04:08.482Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-12-13T00:04:08.520Z] [work-queue] {"queueLength":1,"workRunningCount":1}
+[debug] [2022-12-13T00:04:08.522Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2022-12-13T00:04:08.524Z] Accepted request POST /gestor-financeiro-familiar/us-central1/usuarios --> us-central1-usuarios
+[debug] [2022-12-13T00:04:08.538Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-12-13T00:04:08.540Z] [functions] Got req.url=/gestor-financeiro-familiar/us-central1/usuarios, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/gestor-financeiro-familiar/us-central1/usuarios, mapping to path=/"}}
+[debug] [2022-12-13T00:04:08.558Z] [worker-pool] addWorker(us-central1-usuarios) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-usuarios)"}}
+[debug] [2022-12-13T00:04:08.560Z] [worker-pool] Adding worker with key us-central1-usuarios, total=2 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-usuarios, total=2"}}
+[debug] [2022-12-13T00:04:08.957Z] Serving at port 9005
+
+[info] >  Debugger attached. {"user":"Debugger attached.\r","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"\u001b[90m> \u001b[39m Debugger attached.\r"}}
+[debug] [2022-12-13T00:04:09.225Z] Got response from /__/functions.yaml {"endpoints":{"usuarios":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"usuarios"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-12-13T00:04:09.241Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: usuarios. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: usuarios."}}
+[debug] [2022-12-13T00:04:09.259Z] [worker-pool] Marking BUSY worker to finish (us-central1-usuarios) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Marking BUSY worker to finish (us-central1-usuarios)"}}
+[debug] [2022-12-13T00:04:09.260Z] [worker-us-central1-usuarios-dbf0363f-d59b-4831-a8c0-d68936d09224]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-usuarios-dbf0363f-d59b-4831-a8c0-d68936d09224]: FINISHING"}}
+[debug] [2022-12-13T00:04:12.499Z] [runtime-status] [10472] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [10472] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-13T00:04:12.503Z] [runtime-status] [10472] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.24.1","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [10472] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-13T00:04:12.505Z] [runtime-status] [10472] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [10472] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-12-13T00:04:12.506Z] [runtime-status] [10472] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.24.1","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [10472] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-13T00:04:12.619Z] [runtime-status] [10472] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [10472] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-12-13T00:04:12.620Z] [runtime-status] [10472] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.24.1","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-functions\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [10472] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}}"}}
+[debug] [2022-12-13T00:04:12.622Z] [runtime-status] [10472] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.24.1","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [10472] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-13T00:04:12.627Z] [runtime-status] [10472] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [10472] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-13T00:04:12.634Z] [runtime-status] [10472] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.24.1","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-functions\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [10472] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.24.1\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\index.js\"}"}}
+[debug] [2022-12-13T00:04:12.635Z] [runtime-status] [10472] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"C:\\Projetos\\gestor-financeiro\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [10472] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2022-12-13T00:04:12.737Z] [runtime-status] [10472] Functions runtime initialized. {"cwd":"C:\\Projetos\\gestor-financeiro\\functions","node_version":"18.12.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [10472] Functions runtime initialized. {\"cwd\":\"C:\\\\Projetos\\\\gestor-financeiro\\\\functions\",\"node_version\":\"18.12.1\"}"}}
+[debug] [2022-12-13T00:04:12.739Z] [runtime-status] [10472] Listening to port: \\?\pipe\fire_emu_198960b15f6127c1 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"[runtime-status] [10472] Listening to port: \\\\?\\pipe\\fire_emu_198960b15f6127c1"}}
+[debug] [2022-12-13T00:04:12.825Z] [worker-us-central1-usuarios-a0e1e7a4-01ad-4be3-bd54-b198d07bf94f]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-usuarios-a0e1e7a4-01ad-4be3-bd54-b198d07bf94f]: IDLE"}}
+[debug] [2022-12-13T00:04:12.827Z] [worker-pool] submitRequest(triggerId=us-central1-usuarios) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-usuarios)"}}
+[debug] [2022-12-13T00:04:12.828Z] [worker-us-central1-usuarios-a0e1e7a4-01ad-4be3-bd54-b198d07bf94f]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-usuarios-a0e1e7a4-01ad-4be3-bd54-b198d07bf94f]: BUSY"}}
+[info] i  functions: Beginning execution of "usuarios" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-usuarios"},"extension":{},"message":"Beginning execution of \"usuarios\""}}
+[debug] [2022-12-13T00:04:40.265Z] File C:\Projetos\gestor-financeiro\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Projetos\\gestor-financeiro\\functions\\index.js changed, reloading triggers"}}
+[debug] [2022-12-13T00:04:41.286Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2022-12-13T00:04:48.960Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "functions": "firebase serve --only functions",
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-12-13T00:04:48.962Z] Building nodejs source
+[debug] [2022-12-13T00:04:48.963Z] Analyzing nodejs backend spec
+[debug] [2022-12-13T00:04:48.965Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-12-13T00:04:49.431Z] Serving at port 9005
+
+[debug] [2022-12-13T00:04:49.603Z] Got response from /__/functions.yaml {"endpoints":{"usuarios":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"usuarios"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-12-13T00:04:49.618Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: usuarios. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: usuarios."}}
+[debug] [2022-12-13T00:04:49.634Z] [worker-pool] Marking BUSY worker to finish (us-central1-usuarios) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Marking BUSY worker to finish (us-central1-usuarios)"}}
+[debug] [2022-12-13T00:04:49.635Z] [worker-us-central1-usuarios-a0e1e7a4-01ad-4be3-bd54-b198d07bf94f]: FINISHING {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-usuarios-a0e1e7a4-01ad-4be3-bd54-b198d07bf94f]: FINISHING"}}
+[debug] [2022-12-13T00:05:38.831Z] File C:\Projetos\gestor-financeiro\functions\models\usuario.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Projetos\\gestor-financeiro\\functions\\models\\usuario.js changed, reloading triggers"}}
+[debug] [2022-12-13T00:05:39.836Z] Validating nodejs source
+[debug] [2022-12-13T00:05:47.257Z] checkFunctionsSDKVersion encountered error:Unexpected token D in JSON at position 0 {}
+[debug] [2022-12-13T00:05:47.260Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "functions": "firebase serve --only functions",
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-12-13T00:05:47.262Z] Building nodejs source
+[debug] [2022-12-13T00:05:47.263Z] Analyzing nodejs backend spec
+[debug] [2022-12-13T00:05:47.265Z] Could not find functions.yaml. Must use http discovery
+[info] Shutting down...
+[info] i  functions: Waiting for all functions to finish... {"metadata":{"emulator":{"name":"functions"},"message":"Waiting for all functions to finish..."}}
+[debug] [2022-12-13T00:05:47.701Z] Serving at port 9005
+
+[debug] [2022-12-13T00:05:47.854Z] Got response from /__/functions.yaml {"endpoints":{"usuarios":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"usuarios"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-12-13T00:05:47.870Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: usuarios. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: usuarios."}}
