@@ -15,18 +15,12 @@
       ]
     }
   ],
-  "storage": {
-    "rules": "storage.rules"
-  },
   "emulators": {
     "functions": {
       "port": 5001
     },
     "firestore": {
       "port": 8080
-    },
-    "storage": {
-      "port": 9199
     },
     "ui": {
       "enabled": true
@@ -42,7 +36,7 @@
       "port": 5000
     },
     "pubsub": {
-      "port": 8085
+      "port": 8090
     }
   }
 }
