@@ -1,5 +1,9 @@
-const firestore = require('firebase-admin/firestore');
-const db = new firestore.Firestore();
+const { initializeApp } = require("firebase-admin/app");
+const { getFirestore } = require('firebase-admin/firestore');
+
+const cred = require('../../firebase/cred.js');
+const db = initializeApp(cred);
+db.firestore = () => { return getFirestore(db) };
 
 class Repository {
     add(collection, obj) {
