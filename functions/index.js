@@ -21,4 +21,4 @@ exports.transactions = functions.https.onRequest((req, res) => auth(req, res, db
 exports.users = functions.https.onRequest((req, res) => auth(req, res, db, userRoutes));
 
 //Schedules
-exports.accountingBalance = functions.pubsub.schedule('every 2 minutes').onRun((context) => accountReport(context));
+//exports.accountingBalance = functions.pubsub.schedule('every 2 minutes').onRun((context) => accountReport(context));
