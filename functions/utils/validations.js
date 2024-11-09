@@ -1,7 +1,8 @@
 const CustomError = require("./customError");
 
-function validateContract(data, except) {
-    const contract = data.contract;
+function validateContract(cls, update) {
+    const contract = cls.contract;
+    const data = cls.data;
     for (const key in contract) {
         if (contract[key].required) {
             if (data[key]) {
@@ -9,16 +10,18 @@ function validateContract(data, except) {
                     throw new CustomError({
                         message: contract[key].error,
                         status: 400
-                    })
-                }
+                    });
+                };
             } else {
-                throw new CustomError({
-                    message: contract[key].error,
-                    status: 400
-                })
-            }
-        }
-    }
-}
+                if (!update && !Object.prototype.hasOwnProperty.call(data, key)) {
+                    throw new CustomError({
+                        message: contract[key].error,
+                        status: 400
+                    });
+                };
+            };
+        };
+    };
+};
 
-module.exports = validateContract;
+module.exports = { validateContract };

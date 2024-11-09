@@ -1,23 +1,24 @@
+const auth = require("./middlewares/auth");
 const functions = require("firebase-functions");
-const auth = require("./middleware/auth");
+const { getFirestore } = require('firebase-admin/firestore');
+const { initializeApp } = require("firebase-admin/app");
 
-const userRoutes = require('./routes/usuario');
-const transactRoutes = require('./routes/transacao');
-const transTypeRoutes = require('./routes/tipo-trans');
-const categoryRoutes = require('./routes/categorias');
-const {
-    accountRoutes,
-    report
-} = require('./routes/contas');
+//Repository
+const cred = require('../firebase/cred.js');
+const db = initializeApp(cred);
+db.firestore = () => { return getFirestore(db) };
 
-exports.usuarios = functions.https.onRequest((req, res) => auth(req, res, userRoutes));
+//Routes
+const userRoutes = require('./routes/user.js');
+const transRoutes = require('./routes/transaction.js');
+const categoryRoutes = require('./routes/category.js');
+const { routes: accountRoutes, report: accountReport } = require('./routes/account.js');
 
-exports.transacoes = functions.https.onRequest((req, res) => auth(req, res, transactRoutes));
+//Endpoints
+exports.accounts = functions.https.onRequest((req, res) => auth(req, res, db, accountRoutes));
+exports.categories = functions.https.onRequest((req, res) => auth(req, res, db, categoryRoutes));
+exports.transactions = functions.https.onRequest((req, res) => auth(req, res, db, transRoutes));
+exports.users = functions.https.onRequest((req, res) => auth(req, res, db, userRoutes));
 
-exports.tiposTransacoes = functions.https.onRequest((req, res) => auth(req, res, transTypeRoutes));
-
-exports.categorias = functions.https.onRequest((req, res) => auth(req, res, categoryRoutes));
-
-exports.contas = functions.https.onRequest((req, res) => auth(req, res, accountRoutes));
-
-exports.balanco = functions.pubsub.schedule('every 2 minutes').onRun((context) => report(context));
+//Schedules
+exports.accountingBalance = functions.pubsub.schedule('every 2 minutes').onRun((context) => accountReport(context));
