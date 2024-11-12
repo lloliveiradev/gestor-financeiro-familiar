@@ -1,0 +1,5 @@
+
+function login() {
+    formValidate('login');
+
+};

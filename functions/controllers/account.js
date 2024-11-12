@@ -1,6 +1,6 @@
-const Account = require('../classes/account');
+const Account = require('../models/account');
 const CustomError = require("../utils/customError");
-const Email = require('../classes/email');
+const Email = require('../models/email');
 const { validateContract } = require('../utils/validations');
 
 class AccountControl {

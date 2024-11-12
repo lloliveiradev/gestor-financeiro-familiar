@@ -9,7 +9,7 @@ class Transation {
         this.data = this.model(data);
         this.new = id ? false : true;
         this.db = new Repository(db, 'transactions');
-        this.reqUser = reqUser || { name: 'WebService', value: '0097' };
+        this.reqUser = reqUser || { name: 'WebService', ammount: '0097' };
 
         this.contract = {
             title: {
@@ -17,10 +17,10 @@ class Transation {
                 type: 'string',
                 error: "The attribute 'title' is required and only accepts the data type String"
             },
-            value: {
+            ammount: {
                 required: true,
                 type: 'number',
-                error: "The attribute 'value' is required and only accepts the data type Number"
+                error: "The attribute 'ammount' is required and only accepts the data type Number"
             },
             date: {
                 required: true,
@@ -128,7 +128,7 @@ class Transation {
             title: null, // string
             type: null, // object { id, name }
             "update": null, // object { date, user }
-            value: null, // number
+            ammount: null, // number
         };
         const formatted = JSONObjectMerge.default(obj, data);
         if (!this.new) {

@@ -5,55 +5,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor Financeiro</title>
+    <title>Kairós</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap">
     <link rel="stylesheet" href="css/mdb.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/loader.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Gestor Financeiro</a>
-        </div>
-    </nav>
-    <div>
-        <div class="align-items-center">
-            Janeiro
-        </div>
-        <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-start"
-                style="background-color: #ad07071e;">
-                <input class="form-check-input me-1 d-block despesa" type="checkbox" checked id="1" disabled>
-                <div class="ms-2 me-auto justify-content-between">
-                    <div>
-                        <b>Alimentação: </b>
-                        Almoço
+    <div id="preloader" style="display: none;">
+        <div class="row" style="text-align: center; margin: auto">
+            <div id="preloader_msg" class="bg-default fs-1 justify-content-center rounded-2 text-white"></div>
+            <div class="col-12">
+                <div id="fountainG" style="margin-top: 30px;">
+                    <div id="fountainG_1" class="fountainG">
                     </div>
-                    <span>Carteira</span>
-                </div>
-                <span class="badge badge-primary rounded-pill bg-danger text-light">R$ 15,90</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-start"
-                style="background-color: #07ad6d1e;">
-                <input class="form-check-input me-1 d-block receita" type="checkbox" checked id="2" disabled>
-                <div class="ms-2 me-auto justify-content-between">
-                    <div>
-                        <b>Salário: </b>
-                        ApoioTech
+                    <div id="fountainG_2" class="fountainG">
                     </div>
-                    <span>Banco do Brasil</span>
+                    <div id="fountainG_3" class="fountainG">
+                    </div>
+                    <div id="fountainG_4" class="fountainG">
+                    </div>
+                    <div id="fountainG_5" class="fountainG">
+                    </div>
+                    <div id="fountainG_6" class="fountainG">
+                    </div>
+                    <div id="fountainG_7" class="fountainG">
+                    </div>
+                    <div id="fountainG_8" class="fountainG">
+                    </div>
                 </div>
-                <span class="badge badge-primary rounded-pill bg-success text-light">R$ 2000,00</span>
-            </li>
-        </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <form id="login" class="d-flex justify-content-center">
+                <div class="row w-25">
+                    <div class="col-12 mb-3">
+                        <label for="username" class="form-label fw-bold required">Username:</label>
+                        <input type="text" name="username" id="username"
+                            class="form-control form-control-lg form-control-solid mandatory text-lowercase">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="password" class="form-label fw-bold required">Password:</label>
+                        <input type="password" name="password" id="password"
+                            class="form-control form-control-lg form-control-solid mandatory">
+                    </div>
+                    <div class="col-12 fs-4 mb-3 py-1 text-white" style="cursor:pointer; text-align: center;"
+                        onclick="login()">
+                        <div class="bg-primary rounded-2 py-1">Login</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer"></div>
     </div>
 
     <script type="text/javascript" src="js/mdb.min.js"></script>
-    <script type="text/javascript"></script>
+    <script type="text/javascript" src="js/login.js"></script>
 </body>
 
 </html>

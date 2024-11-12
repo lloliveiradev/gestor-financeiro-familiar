@@ -1,5 +1,5 @@
 const CustomError = require("../utils/customError");
-const User = require('../classes/user');
+const User = require('../models/user');
 const { validateContract } = require('../utils/validations');
 
 class UserControl {

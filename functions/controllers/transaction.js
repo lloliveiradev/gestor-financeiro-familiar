@@ -1,4 +1,4 @@
-const Transacao = require('../classes/transaction');
+const Transaction = require('../models/transaction');
 const CustomError = require("../utils/customError");
 const { validateContract } = require('../utils/validations');
 
@@ -6,7 +6,7 @@ class TransacaoControl {
     async post(req, res, db) {
         try {
             const data = req.body;
-            const transaction = new Transacao(data, db, req.user.info);
+            const transaction = new Transaction(data, db, req.user.info);
             validateContract(transaction);
             const result = await transaction.create();
             return res.status(200).json({ id: result });
@@ -18,7 +18,7 @@ class TransacaoControl {
     async get(req, res, db) {
         try {
             const query = req.query;
-            const cls = new Transacao(query, db, req.user.info);
+            const cls = new Transaction(query, db, req.user.info);
             let result;
             if (query.id) result = await cls.read();
             else {
@@ -39,7 +39,7 @@ class TransacaoControl {
         try {
             const data = req.body;
             if (!data.id) return res.status(400).json({ message: "Inform a transaction id!" });
-            const transaction = new Transacao(data, db, req.user.info);
+            const transaction = new Transaction(data, db, req.user.info);
             validateContract(transaction, true);
             const result = await transaction.update();
             return res.status(200).json({ message: result });
@@ -52,7 +52,7 @@ class TransacaoControl {
         try {
             const query = req.query;
             if (!query.id) return res.status(400).json({ message: "Inform a transaction id!" });
-            const transaction = new Transacao(query, db, req.user.info);
+            const transaction = new Transaction(query, db, req.user.info);
             const result = await transaction.delete(query.id);
             return res.status(200).json({ message: result });
         } catch (error) {

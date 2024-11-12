@@ -1,4 +1,4 @@
-const Category = require('../classes/category');
+const Category = require('../models/category');
 const CustomError = require("../utils/customError");
 const { validateContract } = require('../utils/validations');
 
