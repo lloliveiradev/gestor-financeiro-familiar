@@ -7,7 +7,9 @@ function viewPassword() {
     $('#password').attr('type', $('.fa-eye:visible').length > 0 ? 'text' : 'password');
 };
 
-async function signUp(email, password) {
+async function signUp() {
+    const email = $('#email').val();
+    const password = $('#password').val();
     const valid = formValidate('signUp');
     if (!valid) return;
     preloader(true, 'Creating user...');
@@ -47,7 +49,9 @@ async function signUp(email, password) {
     }).finally(() => { preloader() });
 };
 
-function login(email, password) {
+function login() {
+    const email = $('#email').val();
+    const password = $('#password').val();
     console.info('obj', { email, password });
     const valid = formValidate('login');
     if (!valid) return;
@@ -99,7 +103,8 @@ function checkUser() {
     });
 };
 
-function recoverPassword(email) {
+function recoverPassword() {
+    const email = $('#email').val();
     preloader(true, 'Sending email...');
     firebase.auth().sendPasswordResetEmail(email).then(() => {
         Swal.fire({

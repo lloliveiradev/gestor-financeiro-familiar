@@ -58,23 +58,19 @@
                     <!--begin::Content-->
                     <div class="d-flex flex-row-fluid flex-column text-center p-10 pt-lg-20 bg-white">
                         <!--begin::Logo-->
-                        <span class="py-9 mb-2">
-                            <img alt="Logo" src="assets/media/logos/logo.png" class="h-100px" />
+                        <span class="align-content-center d-flex justify-content-center">
+                            <img alt="Logo" src="assets/media/logos/logo.png" class="w-75" />
                         </span>
                         <hr><br>
                         <!--end::Logo-->
                         <!--begin::Description-->
-                        <p class="fw-bold fs-1" style="color: #5d14d3;">
-                            <span style="color: #1C155B;">Welcome to</span> <br> Kairós!
+                        <p class="fw-bold fs-1" style="color: #000000;">
+                            Welcome to your money's best friend
                         </p>
                         <small>Developed by <b>Sixess</b></small>
                         <!--end::Description-->
                     </div>
                     <!--end::Content-->
-                    <!--begin::Illustration-->
-                    <div class="d-flex flex-row-auto bgi-no-repeat bg-dark bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-100px min-h-lg-200px"
-                        style="background-image: url(assets/media/illustrations/sketchy-1/17.png)"></div>
-                    <!--end::Illustration-->
                 </div>
                 <!--end::Wrapper-->
             </div>
@@ -94,7 +90,7 @@
                                 <!--end::Title-->
                                 <!--begin::Link-->
                                 <div class="text-gray-400 fw-bold fs-4">New here?
-                                    <a href="/pages/sign-up" class="link-primary fw-bolder">Create account</a>
+                                    <a href="/pages/sign-up.html" class="link-primary fw-bolder">Create account</a>
                                 </div>
                                 <!--end::Link-->
                             </div>
@@ -134,7 +130,8 @@
                         </form>
                         <!--end::Form-->
                         <!--begin::Submit button-->
-                        <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
+                        <button type="submit" id="btn_login" class="btn btn-lg btn-primary w-100 mb-5"
+                            onclick="login()">
                             <span class="indicator-label">Login</span>
                             <span class="indicator-progress">Please, await...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span>

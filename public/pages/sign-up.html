@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../assets/css/style.bundle.css">
 </head>
 
-<body class="bg-body">
+<body>
     <!--begin::Loader-->
     <div id="preloader" style="display: none;">
         <div class="row" style="text-align: center; margin: auto">
@@ -58,23 +58,19 @@
                     <!--begin::Content-->
                     <div class="d-flex flex-row-fluid flex-column text-center p-10 pt-lg-20 bg-white">
                         <!--begin::Logo-->
-                        <span class="py-9 mb-2">
-                            <img alt="Logo" src="../assets/media/logos/logo.png" class="h-md-100px h-sm-75px" />
+                        <span class="align-content-center d-flex justify-content-center">
+                            <img alt="Logo" src="../assets/media/logos/logo.png" class="w-75" />
                         </span>
                         <hr><br>
                         <!--end::Logo-->
                         <!--begin::Description-->
-                        <p class="fw-bold fs-1" style="color: #5c06ac;">
-                            <span style="color: #000000;">Welcome to</span> <br> Kairós
+                        <p class="fw-bold fs-1" style="color: #000000;">
+                            Welcome to your money's best friend
                         </p>
                         <small>Developed by <b>Sixess</b></small>
                         <!--end::Description-->
                     </div>
                     <!--end::Content-->
-                    <!--begin::Illustration-->
-                    <div class="d-flex flex-row-auto bgi-no-repeat bg-dark bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-100px min-h-lg-200px"
-                        style="background-image: url(assets/media/illustrations/sketchy-1/17.png)"></div>
-                    <!--end::Illustration-->
                 </div>
                 <!--end::Wrapper-->
             </div>
@@ -90,24 +86,27 @@
                             <div class="row">
                                 <!--begin::Col-->
                                 <div class="col-12 mb-6">
-                                    <label class="form-label fw-bolder text-dark fs-6" for="full_name">Name:</label>
-                                    <input class="form-control form-control-lg form-control-solid" type="text"
+                                    <label class="form-label fw-bolder text-dark fs-6 required"
+                                        for="full_name">Name:</label>
+                                    <input class="form-control form-control-lg form-control-solid mandatory" type="text"
                                         name="full_name" autocomplete="off" id="full_name" maxlength="100" />
                                 </div>
                                 <!--end::Col-->
                                 <!--begin::Col-->
                                 <div class="col-12 mb-6">
-                                    <label class="form-label fw-bolder text-dark fs-6" for="birth_date">Birth
-                                        Date:</label>
-                                    <input class="form-control form-control-lg form-control-solid" type="date"
+                                    <label class="form-label fw-bolder text-dark fs-6 required" for="birth_date">
+                                        Birth Date:
+                                    </label>
+                                    <input class="form-control form-control-lg form-control-solid mandatory" type="date"
                                         name="birth_date" id="birth_date" />
                                 </div>
                                 <!--end::Col-->
                                 <!--begin::Col-->
                                 <div class="col-12 mb-6">
-                                    <label class="form-label fw-bolder text-dark fs-6" for="email">Email:</label>
-                                    <input class="form-control form-control-lg form-control-solid" type="email"
-                                        name="email" autocomplete="off" id="email" />
+                                    <label class="form-label fw-bolder text-dark fs-6 required"
+                                        for="email">Email:</label>
+                                    <input class="form-control form-control-lg form-control-solid mandatory"
+                                        type="email" name="email" autocomplete="off" id="email" />
                                 </div>
                                 <!--end::Col-->
                             </div>
@@ -115,12 +114,13 @@
                                 <!--begin::Wrapper-->
                                 <div class="mb-2">
                                     <!--begin::Label-->
-                                    <label class="form-label fw-bolder text-dark fs-6" for="password">Password:</label>
+                                    <label class="form-label fw-bolder text-dark fs-6 required"
+                                        for="password">Password:</label>
                                     <!--end::Label-->
                                     <!--begin::Input wrapper-->
                                     <div class="position-relative mb-3">
-                                        <input class="form-control form-control-lg form-control-solid" type="password"
-                                            name="password" autocomplete="off" id="password" />
+                                        <input class="form-control form-control-lg form-control-solid mandatory"
+                                            type="password" name="password" autocomplete="off" id="password" />
                                         <span
                                             class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2"
                                             onclick="viewPassword()">
@@ -162,7 +162,7 @@
 
                         <!--begin::Submit button-->
                         <div class="text-center">
-                            <button type="button" id="kt_sign_up_submit" class="btn btn-lg btn-primary">
+                            <button type="button" id="btn_signup" class="btn btn-lg btn-primary" onclick="signUp()">
                                 <span class="indicator-label">Sign-up</span>
                                 <span class="indicator-progress">Please, await...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
