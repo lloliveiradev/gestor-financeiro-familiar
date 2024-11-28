@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,15 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kairós</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/e417b2c8b7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap">
-    <link rel="stylesheet" href="css/mdb.min.css">
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="assets/bundles/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bundles/sweetalert/sweetalert2.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="./assets/css/style.bundle.css">
 </head>
 
 <body>
+    <!--begin::Loader-->
     <div id="preloader" style="display: none;">
         <div class="row" style="text-align: center; margin: auto">
             <div id="preloader_msg" class="bg-default fs-1 justify-content-center rounded-2 text-white"></div>
@@ -41,34 +43,123 @@
             </div>
         </div>
     </div>
+    <!--end::Loader-->
 
-    <div class="card">
-        <div class="card-header"></div>
-        <div class="card-body">
-            <form id="login" class="d-flex justify-content-center">
-                <div class="row w-25">
-                    <div class="col-12 mb-3">
-                        <label for="username" class="form-label fw-bold required">Username:</label>
-                        <input type="text" name="username" id="username"
-                            class="form-control form-control-lg form-control-solid mandatory text-lowercase">
+    <!--begin::Main-->
+    <!--begin::Root-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Authentication - Sign-in -->
+        <div class="d-flex flex-column flex-lg-row flex-column-fluid">
+            <!--begin::Aside-->
+            <div class="d-flex flex-column flex-lg-row-auto w-xl-600px positon-xl-relative"
+                style="background-color: rgb(202, 202, 202)">
+                <!--begin::Wrapper-->
+                <div class="d-flex flex-column position-xl-fixed top-0 bottom-0 w-xl-600px scroll-y">
+                    <!--begin::Content-->
+                    <div class="d-flex flex-row-fluid flex-column text-center p-10 pt-lg-20 bg-white">
+                        <!--begin::Logo-->
+                        <span class="py-9 mb-2">
+                            <img alt="Logo" src="assets/media/logos/logo.png" class="h-100px" />
+                        </span>
+                        <hr><br>
+                        <!--end::Logo-->
+                        <!--begin::Description-->
+                        <p class="fw-bold fs-1" style="color: #5d14d3;">
+                            <span style="color: #1C155B;">Welcome to</span> <br> Kairós!
+                        </p>
+                        <small>Developed by <b>Sixess</b></small>
+                        <!--end::Description-->
                     </div>
-                    <div class="col-12 mb-3">
-                        <label for="password" class="form-label fw-bold required">Password:</label>
-                        <input type="password" name="password" id="password"
-                            class="form-control form-control-lg form-control-solid mandatory">
-                    </div>
-                    <div class="col-12 fs-4 mb-3 py-1 text-white" style="cursor:pointer; text-align: center;"
-                        onclick="login()">
-                        <div class="bg-primary rounded-2 py-1">Login</div>
-                    </div>
+                    <!--end::Content-->
+                    <!--begin::Illustration-->
+                    <div class="d-flex flex-row-auto bgi-no-repeat bg-dark bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-100px min-h-lg-200px"
+                        style="background-image: url(assets/media/illustrations/sketchy-1/17.png)"></div>
+                    <!--end::Illustration-->
                 </div>
-            </form>
+                <!--end::Wrapper-->
+            </div>
+            <!--end::Aside-->
+            <!--begin::Body-->
+            <div class="d-flex flex-column flex-lg-row-fluid py-10">
+                <!--begin::Content-->
+                <div class="d-flex flex-center flex-column flex-column-fluid">
+                    <!--begin::Wrapper-->
+                    <div class="w-lg-500px p-10 p-lg-15 mx-auto">
+                        <!--begin::Form-->
+                        <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="#">
+                            <!--begin::Heading-->
+                            <div class="text-center mb-10">
+                                <!--begin::Title-->
+                                <h1 class="text-dark mb-3">Login</h1>
+                                <!--end::Title-->
+                                <!--begin::Link-->
+                                <div class="text-gray-400 fw-bold fs-4">New here?
+                                    <a href="/pages/sign-up" class="link-primary fw-bolder">Create account</a>
+                                </div>
+                                <!--end::Link-->
+                            </div>
+                            <!--begin::Heading-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Label-->
+                                <label class="form-label fs-6 fw-bolder text-dark" for="email">Email:</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-lg form-control-solid" type="text" name="email"
+                                    autocomplete="off" id="email" />
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                            <!--begin::Input group-->
+                            <div class="fv-row mb-10">
+                                <!--begin::Wrapper-->
+                                <div class="d-flex flex-stack mb-2">
+                                    <!--begin::Label-->
+                                    <label class="form-label fw-bolder text-dark fs-6 mb-0"
+                                        for="password">Password:</label>
+                                    <!--end::Label-->
+                                    <!--begin::Link-->
+                                    <a href="pages/password-reset.html" class="link-primary fs-6 fw-bolder">
+                                        Forgot it?
+                                    </a>
+                                    <!--end::Link-->
+                                </div>
+                                <!--end::Wrapper-->
+                                <!--begin::Input-->
+                                <input class="form-control form-control-lg form-control-solid" type="password"
+                                    name="password" autocomplete="off" id="password" />
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Input group-->
+                        </form>
+                        <!--end::Form-->
+                        <!--begin::Submit button-->
+                        <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
+                            <span class="indicator-label">Login</span>
+                            <span class="indicator-progress">Please, await...
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                            </span>
+                        </button>
+                        <!--end::Submit button-->
+                    </div>
+                    <!--end::Wrapper-->
+                </div>
+                <!--end::Content-->
+            </div>
+            <!--end::Body-->
         </div>
-        <div class="card-footer"></div>
+        <!--end::Authentication - Sign-in-->
     </div>
+    <!--end::Root-->
+    <!--end::Main-->
 
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
+    <!--begin::Javascript-->
+    <script type="text/javascript" src="assets/bundles/jquery/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="assets/bundles/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/bundles/sweetalert/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="assets/js/utils.js"></script>
+    <script type="text/javascript" src="assets/js/auth.js"></script>
+    <!--end::Javascript-->
 </body>
 
 </html>

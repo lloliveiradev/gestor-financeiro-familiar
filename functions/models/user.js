@@ -21,11 +21,6 @@ class User {
                 type: 'string',
                 error: "The attribute 'email' is required and only accepts the data type String"
             },
-            password: {
-                required: true,
-                type: 'string',
-                error: "The attribute 'password' is required and only accepts the data type String"
-            },
             birth_date: {
                 required: true,
                 type: 'string',
@@ -159,8 +154,8 @@ class User {
             "deleted": false, // boolean
             "deletion": null, // object { date, user }
             name: null, // string - upperCase
-            password: null, // string - encripted
             profile_photo: null, // string - url
+            uid: null, // string - firebase doc hash
             "update": null, // object { date, user }
         };
         const formatted = JSONObjectMerge.default(obj, data);
