@@ -32104,14 +32104,6 @@ fieldset:disabled .btn {
     background-color: #f1416c !important;
 }
 
-.bg-light-dark {
-    background-color: #eff2f5 !important;
-}
-
-.bg-light-dark.hoverable:hover {
-    background-color: #dce3e9 !important;
-}
-
 .bg-dark {
     --bg-color: 24, 28, 50;
 }

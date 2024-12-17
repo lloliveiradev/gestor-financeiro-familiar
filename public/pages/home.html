@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kairós</title>
+
+    <script src="https://kit.fontawesome.com/e417b2c8b7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap">
+    <link rel="stylesheet" href="../assets/bundles/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bundles/sweetalert/sweetalert2.min.css">
+    <link rel="stylesheet" href="../assets/css/style.bundle.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+
+<!--begin::Body-->
+
+<body>
+    <!--begin::Loader-->
+    <div id="preloader" style="display: none;">
+        <div class="row" style="text-align: center; margin: auto">
+            <div id="preloader_msg" class="bg-default fs-1 justify-content-center rounded-2 text-white"></div>
+            <div class="col-12">
+                <div id="fountainG" style="margin-top: 30px;">
+                    <div id="fountainG_1" class="fountainG">
+                    </div>
+                    <div id="fountainG_2" class="fountainG">
+                    </div>
+                    <div id="fountainG_3" class="fountainG">
+                    </div>
+                    <div id="fountainG_4" class="fountainG">
+                    </div>
+                    <div id="fountainG_5" class="fountainG">
+                    </div>
+                    <div id="fountainG_6" class="fountainG">
+                    </div>
+                    <div id="fountainG_7" class="fountainG">
+                    </div>
+                    <div id="fountainG_8" class="fountainG">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end::Loader-->
+
+    <!--begin::Main-->
+    <!--begin::Root-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Home -->
+        <div class="row bg-active-opacity-75 bg-light-dark pb-1 p-5">
+            <div class="col-2">
+                <div id="profile_picture">
+                    <img src="../assets/media/profile_pic.jpeg" alt="" style="max-height: 50px;" class="rounded-circle">
+                </div>
+            </div>
+            <div class="col-8 align-content-center text-center text-white" id="month_nav_dd" onclick="monthPicker()">
+                <span id="month_sel" class="fs-2 fw-bold pe-2">December</span>
+                <span class="fa fa-lg fa-chevron-down"></span>
+            </div>
+            <div class="col-2 align-content-center d-grid fs-2 justify-content-end text-white">
+                <span class="fa fa-lg fa-gear"></span>
+            </div>
+        </div>
+        <div class="row bg-light-dark p-2">
+            <div class="col text-center">
+                <span class="text-muted">Account balance</span><br>
+                <span class="fs-1 fw-bolder text-white">
+                    <span class="currency">US$</span> <span id="balance_ammount">983.19</span>
+                </span>
+            </div>
+        </div>
+        <div class="row bg-light-dark">
+            <div class="col-6">
+                <div class="row p-5">
+                    <div class="col-auto">
+                        <span class="badge badge-lg badge-circle p-0 bg-success">
+                            <span class="fa fa-arrow-up"></span>
+                        </span>
+                    </div>
+                    <div class="col-auto">
+                        <span class="text-muted">Receipts</span><br>
+                        <span class="text-success fs-1 fw-bolder">
+                            <span class="currency">US$</span> <span id="receipt_ammount">7,533.99</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row p-5">
+                    <div class="col-auto">
+                        <span class="badge badge-lg badge-circle p-0 bg-danger">
+                            <span class="fa fa-arrow-down"></span>
+                        </span>
+                    </div>
+                    <div class="col-auto">
+                        <span class="text-muted">Expenses</span><br>
+                        <span class="text-danger fs-1 fw-bolder">
+                            <span class="currency">US$</span> <span id="expense_ammount">9,537.02</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end::Home-->
+    </div>
+    <!--end::Root-->
+    <!--end::Main-->
+
+    <!--begin::Footer-->
+    <footer class="footer bg-light-dark d-flex flex-column flex-root py-2 pt-5" style="max-height: 210px">
+        <div class="row d-flex justify-content-evenly text-white fs-4">
+            <div class="col-auto text-center">
+                <span class="fa fa-lg fa-home"></span>
+            </div>
+            <div class="col-auto text-center">
+                <span class="svg svg-icon svg-icon-white svg-icon-2qx">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M32 96l320 0 0-64c0-12.9 7.8-24.6 19.8-29.6s25.7-2.2 34.9 6.9l96 96c6 6 9.4 14.1 9.4 22.6s-3.4 16.6-9.4 22.6l-96 96c-9.2 9.2-22.9 11.9-34.9 6.9s-19.8-16.6-19.8-29.6l0-64L32 160c-17.7 0-32-14.3-32-32s14.3-32 32-32zM480 352c17.7 0 32 14.3 32 32s-14.3 32-32 32l-320 0 0 64c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-96-96c-6-6-9.4-14.1-9.4-22.6s3.4-16.6 9.4-22.6l96-96c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 64 320 0z"
+                            fill="#000000" />
+                    </svg>
+                </span>
+            </div>
+            <div class="col-auto text-center">
+                <div class="align-content-center bg-default rounded-circle"
+                    style="width: 60px; height: 60px; margin-top: -30px;">
+                    <span class="fa fa-lg fa-plus"></span>
+                </div>
+            </div>
+            <div class="col-auto text-center">
+                <span class="fa fa-lg fa-credit-card"></span>
+            </div>
+            <div class="col-auto text-center">
+                <span class="svg svg-icon svg-icon-white svg-icon-2qx">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"
+                            fill="#000000" />
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </footer>
+    <!--end::Footer-->
+
+    <!--begin::Javascript-->
+    <script type="text/javascript" src="../assets/bundles/jquery/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../assets/bundles/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/bundles/sweetalert/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="../assets/js/utils.js"></script>
+    <script type="text/javascript" src="../assets/js/auth.js"></script>
+    <script type="text/javascript" src="../assets/js/home.js"></script>
+    <!--end::Javascript-->
+</body>
+<!--end::Body-->
+
+</html>

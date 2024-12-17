@@ -23,7 +23,7 @@
 }
 
 :root {
-    --tema-adm-geral: #1060b6;
+    --tema-adm-geral: #8c52ff;
     --tema-icones-adm: #fff;
     --tema-backgroud-menu-adm: #cbdef4;
     --tema-icone-selecionado-adm: #009ef7;
@@ -575,4 +575,12 @@ li.reply .time {
 .yes-no:checked {
     --bs-bg-opacity: 1;
     background-color: #47be7d !important;
+}
+
+.bg-light-dark {
+    background-color: rgb(32, 36, 56) !important;
+}
+
+.bg-light-dark.hoverable:hover {
+    background-color: rgba(32, 36, 56, 0.8) !important;
 }
